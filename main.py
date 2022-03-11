@@ -7,7 +7,7 @@ sim_list = []
 
 def get_sim_list(filename='simlist.txt'):
     try:
-        the_list = open(filename, 'r').readlines()
+        the_list = [sim.strip() for sim in open(filename, 'r').readlines()]
     except FileNotFoundError:
         print(F"The sim list file \"{filename}\" was not found.")
         sys.exit(1)
