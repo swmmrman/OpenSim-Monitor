@@ -20,4 +20,8 @@ if __name__ == '__main__':
     print(sim_list)
     while running:
         ps_list = [ps.cmdline() for ps in psutil.process_iter() if ps.name() == "mono"]
+        print(ps_list)
+        for sim in sim_list:
+            if sim not in ps_list:
+                print(F"{sim} is offline")
         sleep(1)
